@@ -1,0 +1,9 @@
+.purpeleBox{
+  background-image: linear-gradient( #704ff2af ,#704ff2cf) , url("../src/assets/NFT.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.last:last-child {
+border-bottom: none;
+}
