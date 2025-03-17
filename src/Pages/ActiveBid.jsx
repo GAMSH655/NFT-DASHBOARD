@@ -14,6 +14,7 @@ import John from "../assets/John.png"
 import { FaTimes } from "react-icons/fa";
 import Cute from "../assets/Cute.png"
 import Red from "../assets/Red.png"
+import Header from "../Components/Header";
  const ActiveBid = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
@@ -58,33 +59,11 @@ import Red from "../assets/Red.png"
      }
 
 
-
-
-
-
     return (
       <div className="flex h-screen">
         <Sidebar isOpen={isSidebarOpen} />
         <div className="flex-1 overflow-auto bg-[#131129]">
-          <header className="bg-[#131129] shadow-lg flex items-center justify-between">
-            <div className=" flex justify-between ">
-            <button className="m-3 text-white" onClick={() => setIsSidebarOpen(!isSidebarOpen)}><FaBars /></button>
-              <div className="bg-gray-600 m-3 flex items-center  rounded-full">
-              <FaMagnifyingGlass className="mx-2" />
-              <input
-                type="text"
-                className="border-none focus:outline-none p-2 rounded-full bg-transparent"
-                placeholder="Search here"
-              />
-            </div>
-            </div>
-             
-             <div className="inline">
-               < FaSun className="inline m-2 text-white"/>
-               <FaBell className="inline m-2 text-white"/>
-               <img src={Avatar} alt="" className="inline m-2 size-[30px]" />
-             </div>
-          </header>
+           <Header isOpen={isSidebarOpen} />
           <h3 className="capitalize font-normal text-white p-2 text-[1.5rem]  md:text-[2rem]">bids page
           <span className="block text-white font-normal text-sm">Welcome to bids page</span>
           </h3>
@@ -109,13 +88,13 @@ import Red from "../assets/Red.png"
           <table className=" text-whiten border-hidden text-white min-w-full">
                  <thead className="">
                       <tr className="">
-                          <th className='py-3 px-6 text-left text-center text-sm font-normal text-white'><FaSquare/> </th>
-                          <th className=' py-3 px-6  text-lg font-normal  font-bold capitalize '>item list</th>
-                          <th className=' py-3 px-6  text-lg font-normal  font-bold capitalize '>open price</th>
-                          <th className=' py-3 px-6  text-lg font-normal  font-bold capitalize '>your offer</th>
-                          <th className=' py-3 px-6  text-lg font-normal  font-bold capitalize '> time left</th>
-                          <th className=' py-3 px-6  text-lg font-normal  font-bold capitalize '> recent offer   </th>
-                          <th className=' py-3 px-6  text-lg font-normal  font-bold capitalize text-white '>action</th>
+                          <th className='py-3 px-6 text-left   text-sm font-normal text-white'><FaSquare/> </th>
+                          <th className=' py-3 px-6  text-lg   font-bold capitalize '>item list</th>
+                          <th className=' py-3 px-6  text-lg   font-bold capitalize '>open price</th>
+                          <th className=' py-3 px-6  text-lg   font-bold capitalize '>your offer</th>
+                          <th className=' py-3 px-6  text-lg   font-bold capitalize '> time left</th>
+                          <th className=' py-3 px-6  text-lg   font-bold capitalize '> recent offer   </th>
+                          <th className=' py-3 px-6  text-lg   font-bold capitalize text-white '>action</th>
                       </tr>
                  </thead>
                  <tbody className="">
@@ -150,10 +129,3 @@ import Red from "../assets/Red.png"
   export default  ActiveBid
 
   // 09112966714 timothy
-
-  const currentTime = new Date();
-  const hours = currentTime.getHours() % 12;
-  const minutes = currentTime.getMinutes() ;
-  const ampm = currentTime.getHours() < 12 ? "AM" : "Am"
-
-  console.log(`${hours}:${minutes.toString().padStart(2,0)}${ampm}`)

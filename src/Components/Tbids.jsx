@@ -1,12 +1,12 @@
 
-import React from "react";
+import React, { useContext } from "react";
 import Auctions from "../assets/Auction.png";
 import Creator from "../assets/Creator.png";
 import Artwork from "../assets/Artwork.png";
 import Chart from "../assets/Chart.png";
 import Stat from "../assets/Stat.png";
-// import Sat from "../Components/"
-
+import Dounghnut from "../Charts/Dounghnut";
+import { ThemeContext } from "../Context/ThemeContext";
 const trendingBids = [
   { image: Artwork, value: "24k", label: "Artwork", change: "+168.001%", color: "text-[#50BB25]" },
   { image: Auctions, value: "89k", label: "Auction", change: "+168.001%", color: "text-[#DC3546]" },
@@ -14,6 +14,7 @@ const trendingBids = [
 ];
 
 const Tbids = () => {
+   const {darkMode , ToggleTheme} = useContext(ThemeContext)
   return (
     <div className=" block md:flex  md:justify-between">
           <div className="md:w-full m-2">
@@ -41,7 +42,7 @@ const Tbids = () => {
             <div className="md:w-full m-3 md:mt-4">
               <h3 className="font-bold text-lg capitalize text-white m-2">Statistics</h3>
               <div className="bg-[#1D1932] rounded-md ">
-                <img src={Stat} alt="Statistics" className="w-full"  />
+                <Dounghnut/>
               </div>
           
           

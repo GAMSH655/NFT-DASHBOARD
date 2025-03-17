@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .purpeleBox{
   background-image: linear-gradient( #704ff2af ,#704ff2cf) , url("../src/assets/NFT.png");
   background-repeat: no-repeat;
@@ -6,4 +10,9 @@
 }
 .last:last-child {
 border-bottom: none;
+}
+.dark-mode {
+  background-color: #ffffff !important; /* White background */
+  color: black !important; /* Black text */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

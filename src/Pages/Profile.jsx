@@ -31,6 +31,13 @@ import Sidebar from "../Components/Sidebar";
                <img src={Avatar} alt="" className="inline m-2 size-[30px]" />
              </div>
           </header>
+          <h3 className="capitalize font-normal text-white p-2 text-[1.5rem]  md:text-[2rem]"> settings
+          <span className="block text-white font-normal text-lg capitalize">Welcome settings page</span>
+          </h3>
+           {["profile" ," security" ," application","payment method"].map((value , index)=>{
+            return <div className="flex"> <p className="text-textPrimary font-sm font-normal capitalize m-[5px]" key={index}>{value}</p></div>
+           })
+           }
           
         </div>
       </div>

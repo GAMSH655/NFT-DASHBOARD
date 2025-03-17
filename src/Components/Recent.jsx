@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useContext } from "react"
 import Popaya from "../assets/Popaya.png"
+import { ThemeContext } from "../Context/ThemeContext"
 const Recent = () =>{
+    const {darkMode} = useContext(ThemeContext)
     const ActivityData = [
         { ActivImg:Popaya , ActivMessage:"Purchase by you for 0.05ETH" , time:"12mins ago" , items:"60 items"},
         { ActivImg:Popaya , ActivMessage:"Purchase by you for 0.04ETH" , time:"13mins ago" , items:"60 items"},
@@ -34,11 +36,11 @@ const Recent = () =>{
             </div> */}
 
             <div className="w-1/2 p-2">
-                 <h3 className="capitalize font-normal text-white p-2 text-[1.5rem]  p-5 md:text-[2rem]">Recent Acitvity</h3>
-                <div className="bg-[#1D1932]">
+                 <h3 className={`capitalize font-normal text-white  text-[1.5rem]  p-5 md:text-[2rem] ${darkMode ? "text-black" : ""}`}>Recent Acitvity</h3>
+                
                 {
                  ActivityData.map(({ActivImg , ActivMessage , ActivityData , time} , index) =>{
-                    return <div className="flex justify-between border-2 border-b-[#D6DBDE] outline:none last ">
+                    return <div  className={`flex justify-evenly m-4 bg-[#1D1932] items-center text-white rounded ${darkMode ? "bg-white shadow-lg text-black" : ""}`} key={index}>
                         <div className="flex justify-center items-center border-[1.5px] w-full border-hidden ">
                              <img src={ActivImg} alt="" className="" />
                              <h4 className="font-semibold capitalize text-lg text-white p-2">
@@ -50,38 +52,38 @@ const Recent = () =>{
                     </div>
                  })   
                 }
-                </div>
+            
             </div>
             <div className="w-1/2">
-            <h3 className="capitalize font-normal text-white p-2 text-[1.5rem]  p-5 md:text-[2rem]">Recent Acitvity</h3>
+            <h3 className={`capitalize font-normal text-white  text-[1.5rem]  p-5 md:text-[2rem] ${darkMode ? "text-black" : ""}`}>Recent Acitvity</h3>
             {
              ActivityData.map(({ActivImg , items} , index) =>{
-                return <div className="flex justify-evenly m-4 bg-[#1D1932] items-center rounded " key={index}>
+                return <div className={`flex justify-evenly m-4 bg-[#1D1932] items-center text-white rounded ${darkMode ? "bg-white shadow-lg text-black" : ""}`} key={index}>
                 <div className="flex justify-center items-center">
                 <img src={ActivImg} alt="" />
-                <h4 className="font-semibold capitalize text-lg text-white p-2">
+                <h4 className="font-semibold capitalize text-lg  p-2">
                     popaya 
                     <span className="block font-normal text-sm text-[#68676E]">{items}</span>
                 </h4>
                 </div>
-                <button className="text-white border-2 border-[#6F4FF2] p-[5px] w-[100px] hover:bg-[#6F4FF2] hover:text-black transition rounded-md ">Follow</button>
+                <button className=" border-2 border-[#6F4FF2] p-[5px] w-[100px] hover:bg-[#6F4FF2] hover:text-black transition rounded-md ">Follow</button>
             </div>
              })
             }
             </div>
             <div className=" w-1/2">
-            <h3 className="capitalize font-normal text-white p-2 text-[1.5rem]  p-5 md:text-[2rem]">Recent post</h3>
+            <h3 className={`capitalize font-normal text-white  text-[1.5rem]  p-5 md:text-[2rem] ${darkMode ? "text-black" : ""}`}>Recent Acitvity</h3>
             {
              ActivityData.map(({ActivImg , items} , index) =>{
-                return <div className="flex justify-evenly items-center  m-4 bg-[#1D1932]" key={index}>
+                return <div  className={`flex justify-evenly m-4 bg-[#1D1932] items-center text-white rounded ${darkMode ? "bg-white shadow-lg text-black" : ""}`} key={index}>
                 <div className="flex justify-center  items-center">
                 <img src={ActivImg} alt="" />
-                <h4 className="font-semibold capitalize text-lg text-white p-2">
+                <h4 className="font-semibold capitalize text-lg  p-2">
                     popaya 
                     <span className="block font-normal text-sm text-[#68676E]">{items}</span>
                 </h4>
                 </div>
-                <button className="text-white border-2 border-[#6F4FF2] p-[5px] w-[100px] hover:bg-[#6F4FF2] hover:text-black transition rounded-md ">Follow</button>
+                <button className=" border-2 border-[#6F4FF2] p-[5px] w-[100px] hover:bg-[#6F4FF2] hover:text-black transition rounded-md ">Follow</button>
             </div>
              })
             }

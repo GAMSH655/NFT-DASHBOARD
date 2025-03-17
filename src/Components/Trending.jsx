@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {useState} from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -7,6 +7,7 @@ import Box from '@mui/material/Box'
 import All from '../Tabs/All';
 import Artwork from '../Tabs/Artwork';
 import Book from '../Tabs/Book';
+import { ThemeContext } from '../Context/ThemeContext';
 const a11yProps = (index) => {
     return {
       id: `simple-tab-${index}`,
@@ -34,14 +35,14 @@ const a11yProps = (index) => {
   };
 const Trending = () => {
     const [value, setValue] = useState(0);
-
+     const {darkMode} = useContext(ThemeContext)
     const handleChange = (event, newValue) => {
       setValue(newValue);
     };
   return (
     <div>
        <div className="">
-       <h3 className="font-bold text-white text-[3rem] m-3 ">Trending bids</h3>
+       <h3 className={`font-bold text-white text-[3rem] m-3 ${darkMode ? "text-black" : ""}`}>Trending bids</h3>
        <Box sx={{ width: '100%' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
